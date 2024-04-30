@@ -1,7 +1,7 @@
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
-  // the constructor...
+  // the constructor
   (this.title = title),
     (this.author = author),
     (this.pages = pages),
@@ -23,7 +23,7 @@ function render() {
         <h5 class="author"> by ${book.author}</h5>
     </div>
     <div class="car-body">
-        <p class="pages">${book.pages}</p>
+        <p class="pages">Pages: ${book.pages}</p>
         <p class="read-status">${book.read ? "Read" : "Not yet read"}</p>
         <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
     </div>

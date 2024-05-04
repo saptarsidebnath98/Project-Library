@@ -1,11 +1,14 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-  // the constructor
-  (this.title = title),
-    (this.author = author),
-    (this.pages = pages),
-    (this.read = read);
+class Book{
+  // the class
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
 }
 function removeBook(index){
     myLibrary.splice(index, 1);

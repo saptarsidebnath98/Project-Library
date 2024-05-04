@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-class Book{
+class Book {
   // the class
   constructor(title, author, pages, read) {
     this.title = title;
@@ -8,11 +8,10 @@ class Book{
     this.pages = pages;
     this.read = read;
   }
-
 }
-function removeBook(index){
-    myLibrary.splice(index, 1);
-    render();
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  render();
 }
 function render() {
   let library = document.querySelector("#library");
@@ -20,8 +19,7 @@ function render() {
   for (let i = 0; i < myLibrary.length; i++) {
     let book = myLibrary[i];
     let bookElement = document.createElement("div");
-    bookElement.innerHTML = 
-    `<div class="car-header">
+    bookElement.innerHTML = `<div class="car-header">
         <h3 class="title">${book.title}</h3>
         <h5 class="author"> by ${book.author}</h5>
     </div>
@@ -40,10 +38,11 @@ function addBookToLibrary() {
   let title = document.querySelector("#title").value;
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#no_of_pages").value;
-  let read = document.querySelector("#read").checked; 
-
-  let newBook = new Book(title, author, pages, read);
-  myLibrary.push(newBook);
+  let read = document.querySelector("#read").checked;
+  if (title && author && pages) {
+    let newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+  }
   render();
 }
 
